@@ -763,14 +763,34 @@
         }
 
         @media (max-width: 767px) {
-            .sticky-scroll__content {
-                display: none !important;
-            }
-            .sticky-scroll .section__header {
-                padding: 4rem 2rem 2rem;
-                margin-bottom: 0;
-            }
-        }
+          .team-mobile {
+              display: none !important;
+          }
+          
+          .sticky-scroll__content {
+              display: flex !important;
+              flex-direction: column;
+              gap: 2rem;
+          }
+          
+          .sticky-scroll__media {
+              position: relative !important;
+              top: 0 !important;
+              height: 400px !important;
+              max-height: none !important;
+              width: 100% !important;
+              margin-bottom: 2rem;
+          }
+          
+          .sticky-scroll__items {
+              padding-top: 0 !important;
+          }
+          
+          .sticky-scroll .section__header {
+              padding: 4rem 2rem 2rem;
+              margin-bottom: 2rem;
+          }
+      }
 
         /* ============================================
            KNOW-HOW GRID
@@ -1039,6 +1059,43 @@
             
             html {
                 scroll-behavior: auto;
+            }
+        }
+        /* Mobile: Zeige Foto UND vier Säulen untereinander */
+        @media (max-width: 767px) {
+            /* Mobile-Flow (Foto) wieder anzeigen */
+            .team-mobile {
+                display: block !important;
+            }
+            
+            /* Sticky-Scroll-Bereich auch auf Mobile anzeigen, aber anders */
+            .sticky-scroll {
+                display: block !important;
+            }
+            
+            /* Auf Mobile: Sticky-Effekt deaktivieren, normaler Flow */
+            .sticky-scroll__content {
+                display: block !important;
+            }
+            
+            .sticky-scroll__media {
+                display: none !important; /* Foto aus Mobile-Flow verwenden */
+            }
+            
+            .sticky-scroll__items {
+                padding-top: 0 !important;
+            }
+            
+            .sticky-scroll__item {
+                margin-bottom: 3rem !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            
+            /* Skills auch auf Mobile anzeigen */
+            .skill-tag {
+                opacity: 1 !important;
+                transform: scale(1) !important;
             }
         }
     </style>
